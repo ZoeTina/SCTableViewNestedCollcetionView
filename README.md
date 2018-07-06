@@ -1,1 +1,2 @@
 # SCTableViewNestedCollcetionView
+# TableView嵌套CollcetionView,动态计算Cell高度
