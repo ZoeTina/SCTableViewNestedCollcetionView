@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import "SCTableViewCell.h"
 #import "BaseTableViewCell.h"
-
+#import "SCBaseSectionHeaderView.h"
 
 static NSString * const reuseIdentifier_t = @"SCTableViewCell";
 static NSString * const reuseIdentifier_c = @"BaseTableViewCell";
@@ -37,7 +37,10 @@ static NSString * const reuseIdentifier_c = @"BaseTableViewCell";
 
 #pragma mark ====== UITableViewDelegate ======
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.dataArray.count + 3;
+    if (section==1) {
+        return 10;
+    }else if (section==2) return 1;
+    return self.dataArray.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -49,8 +52,28 @@ static NSString * const reuseIdentifier_c = @"BaseTableViewCell";
     }
 }
 
+// 多少个分组 section
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 3;
+}
+
+#pragma mark -- 设置Header高度
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    if (section==0) return 0;
+    return 10;
+}
+
+#pragma mark -- Section HearderView Title
+// UITableView在Plain类型下，HeaderView和FooterView不悬浮和不停留的方法
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    SCBaseSectionHeaderView *sectionView = [[SCBaseSectionHeaderView alloc] init];
+    sectionView.section = section;
+    sectionView.tableView = tableView;
+    return sectionView;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row < self.dataArray.count) {
+    if (indexPath.section == 0) {
         [tableView registerClass:[SCTableViewCell class] forCellReuseIdentifier:reuseIdentifier_t];
         SCTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier_t forIndexPath:indexPath];
         cell.delegate = self;
@@ -84,6 +107,7 @@ static NSString * const reuseIdentifier_c = @"BaseTableViewCell";
 - (UITableView *)tableView {
     if (!_tableView) {
         _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) style:UITableViewStylePlain];
+        [_tableView setSeparatorInset:UIEdgeInsetsMake(0,0,0,0)];
         _tableView.delegate = self;
         _tableView.dataSource = self;
     }

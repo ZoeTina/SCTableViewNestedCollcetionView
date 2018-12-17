@@ -15,6 +15,7 @@
 		E771490720EEF5FF00820807 /* SCTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E771490620EEF5FF00820807 /* SCTableViewCell.m */; };
 		E771490A20EEF61200820807 /* SCCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E771490920EEF61200820807 /* SCCollectionViewCell.m */; };
 		E771490D20EEF6C200820807 /* BaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E771490C20EEF6C200820807 /* BaseTableViewCell.m */; };
+		E7D255C520F75035002D1C95 /* SCBaseSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7D255C320F75035002D1C95 /* SCBaseSectionHeaderView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,8 @@
 		E771490920EEF61200820807 /* SCCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCCollectionViewCell.m; sourceTree = "<group>"; };
 		E771490B20EEF6C200820807 /* BaseTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseTableViewCell.h; sourceTree = "<group>"; };
 		E771490C20EEF6C200820807 /* BaseTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewCell.m; sourceTree = "<group>"; };
+		E7D255C320F75035002D1C95 /* SCBaseSectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCBaseSectionHeaderView.m; sourceTree = "<group>"; };
+		E7D255C620F75067002D1C95 /* SCBaseSectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCBaseSectionHeaderView.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +78,8 @@
 				E771490C20EEF6C200820807 /* BaseTableViewCell.m */,
 				E771490820EEF61200820807 /* SCCollectionViewCell.h */,
 				E771490920EEF61200820807 /* SCCollectionViewCell.m */,
+				E7D255C620F75067002D1C95 /* SCBaseSectionHeaderView.h */,
+				E7D255C320F75035002D1C95 /* SCBaseSectionHeaderView.m */,
 				E77148F820EEF5AA00820807 /* Assets.xcassets */,
 				E77148FA20EEF5AA00820807 /* LaunchScreen.storyboard */,
 				E77148FD20EEF5AA00820807 /* Info.plist */,
@@ -152,6 +157,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7D255C520F75035002D1C95 /* SCBaseSectionHeaderView.m in Sources */,
 				E771490D20EEF6C200820807 /* BaseTableViewCell.m in Sources */,
 				E77148F420EEF5A800820807 /* ViewController.m in Sources */,
 				E771490720EEF5FF00820807 /* SCTableViewCell.m in Sources */,
